@@ -12,7 +12,8 @@ const createMatch = async (req, res) => {
 const readAllMatches = async (req, res) => {
   try {
     const matches = await Match.find({});
-    res.status(200).json(matches);
+    // res.status(200).json(matches);
+    res.status(200).json({'id1':{test:'test'}})
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

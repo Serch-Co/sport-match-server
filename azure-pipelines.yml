@@ -17,6 +17,11 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    rsync -av --progress --exclude='.env' --exclude='node_modules' --exclude='.git' . /home/azureuser/sport-match-server/
+
+    cd /home/azureuser/sport-match-server
+
+    pm2 restart server --update-env
+  displayName: 'Deploy to VM'
+
+
