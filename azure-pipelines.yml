@@ -21,7 +21,7 @@ steps:
 
     cd /home/azureuser/sport-match-server
 
-    pm2 restart server --update-env
+    pm2 restart index --update-env
   displayName: 'Deploy to VM'
 
 
